@@ -4,10 +4,7 @@ jobs:
   build:
     docker:
        - image: circleci/node:4.8.2
-
     working_directory: ~/repo
-    no_output_timeout: 2m
-
     steps:
       - checkout
       - restore_cache:
@@ -15,6 +12,7 @@ jobs:
       - run:
           name: install-npm
           command: npm install
+          no_output_timeout: 2m
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -24,6 +22,7 @@ jobs:
             mkdir -p ~/reports
             ./node_modules/.bin/eslint ./ --format junit --output-file ~/reports/eslint.xml
           when: always
+          no_output_timeout: 2m
       - store_test_results:
           path: ~/reports
       - store_artifacts:
