@@ -1,0 +1,25 @@
+{
+  "name": "2elevee",
+  "version": "0.0.1",
+  "description": "Keep on top of the awesomeness",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2elevee/2elevee.git"
+  },
+  "keywords": [
+    "adoption"
+  ],
+  "author": "Alexander Vorobyev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2elevee/2elevee/issues"
+  },
+  "homepage": "https://github.com/2elevee/2elevee#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}

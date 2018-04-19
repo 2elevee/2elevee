@@ -1,0 +1,21 @@
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+version: 2
+jobs:
+  build:
+    docker:
+       - image: circleci/node:4.8.2
+
+    working_directory: ~/repo
+    no_output_timeout: 2m
+
+    steps:
+      - checkout
+      - run:
+          command: |
+            mkdir -p ~/reports
+            eslint ./ --format junit --output-file ~/reports/eslint.xml
+          when: always
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
