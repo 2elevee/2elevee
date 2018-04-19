@@ -10,15 +10,12 @@
     "pretty": "pretty-quick --staged",
     "analyze": "node_modules/.bin/eslint .",
     "test": "jest",
-    "test:ci": "jest --ci --testResultsProcessor=jest-junit"
+    "test:ci": "jest --ci --coverage --testResultsProcessor=jest-junit"
   },
   "husky": {
     "hooks": {
       "pre-commit": "npm-run-all pretty --parallel analyze test"
     }
-  },
-  "jest": {
-    "collectCoverage": true
   },
   "repository": {
     "type": "git",
