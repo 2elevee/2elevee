@@ -27,5 +27,7 @@ rules:
     - warn
   jest/valid-expect:
     - error
+  jest/no-jest-import:
+    - error
 plugins:
   - jest
