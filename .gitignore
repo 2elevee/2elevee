@@ -58,3 +58,5 @@ typings/
 .env
 
 cc-test-reporter
+
+junit.xml
