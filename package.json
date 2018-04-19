@@ -7,14 +7,16 @@
   },
   "main": "index.js",
   "scripts": {
+    "pretty": "pretty-quick --staged",
     "analyze": "node_modules/.bin/eslint .",
     "test": "jest",
     "test:ci": "jest --ci --testResultsProcessor=jest-junit"
   },
-  "pre-commit": [
-    "analyze",
-    "test"
-  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all pretty --parallel analyze test"
+    }
+  },
   "jest": {
     "collectCoverage": true
   },
@@ -34,8 +36,10 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-jest": "^21.15.0",
+    "husky": "^0.14.3",
     "jest": "^22.4.3",
     "jest-junit": "^3.6.0",
-    "pre-commit": "^1.2.2"
+    "npm-run-all": "^4.1.2",
+    "pretty-quick": "^1.4.1"
   }
 }
