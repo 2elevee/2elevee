@@ -14,7 +14,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm-run-all pretty analyze test"
+      "pre-commit": "npm-run-all pretty --parallel analyze test"
     }
   },
   "jest": {
