@@ -2,17 +2,26 @@
   "name": "2elevee",
   "version": "0.0.1",
   "description": "Keep on top of the awesomeness",
+  "engines": {
+    "node": "8.10.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "pretty": "pretty-quick --staged",
+    "analyze": "node_modules/.bin/eslint .",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage --testResultsProcessor=jest-junit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all pretty --parallel analyze test"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/2elevee/2elevee.git"
   },
-  "keywords": [
-    "adoption"
-  ],
+  "keywords": ["adoption"],
   "author": "Alexander Vorobyev",
   "license": "MIT",
   "bugs": {
@@ -20,6 +29,14 @@
   },
   "homepage": "https://github.com/2elevee/2elevee#readme",
   "devDependencies": {
-    "eslint": "^4.19.1"
+    "codecov": "^3.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^21.15.0",
+    "husky": "^1.0.0-rc.1",
+    "jest": "^22.4.3",
+    "jest-junit": "^3.6.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "1.12.1",
+    "pretty-quick": "^1.4.1"
   }
 }
