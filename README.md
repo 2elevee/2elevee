@@ -5,5 +5,6 @@
 https://circleci.com/gh/2elevee/2elevee/tree/master
 )
 [![codecov](https://codecov.io/gh/2elevee/2elevee/branch/master/graph/badge.svg)](https://codecov.io/gh/2elevee/2elevee)
+[![Greenkeeper badge](https://badges.greenkeeper.io/2elevee/2elevee.svg)](https://greenkeeper.io/)
 
 Keep on top of the awesomeness
