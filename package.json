@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Keep on top of the awesomeness",
   "engines": {
-    "node": "8.10.0"
+    "node": "10"
   },
   "main": "index.js",
   "scripts": {
